@@ -1,0 +1,41 @@
+.main-navbar-container
+  background: #1F2531
+
+
+  .nav-item
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
+    padding-top: 2em
+    padding-bottom: 2em
+
+    .nav-icon
+      height: 62px
+      width: 66px
+
+      &.nav-icon-user
+        background: url(../images/sprite.png) -291px -55px
+      &.nav-icon-projects
+        background: url(../images/sprite.png) -217px -50px
+      &.nav-icon-workgroups
+        background: url(../images/sprite.png) -145px -53px
+      &.nav-icon-profiles
+        background: url(../images/sprite.png) -449px -52px
+      &.nav-icon-communities
+        background: url(../images/sprite.png) -375px -55px
+
+        &:before
+          content: ""
+          position: absolute
+          bottom: 0
+          left: 50%
+          transform: translateX(-50%)
+          width: 0
+          height: 0
+          border-left: 13px solid transparent
+          border-right: 13px solid transparent
+          border-bottom: 15px solid white
+
+    .nav-icon-title
+      color: white
+      text-align: center

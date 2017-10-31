@@ -1,0 +1,21 @@
+<!-- <div ng-repeat="member in members | filter:filter.text | limitTo:quantity track by $index" class="">
+
+</div> -->
+<div class="col-md-4 member-container">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="member-avatar" ng-class="{'active-member': selectedMembers.includes($index)}" ng-click="toggleSelectedMember($index)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Andrea_Radrizzani_profile_GroupCEO_MPSilva.png" />
+        <div class="member-avatar-overlay" ng-class="{'active-member': selectedMembers.includes($index)}">
+          <div ng-class="{'active-member-checkbox': selectedMembers.includes($index)}"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="member-info">
+        <h4>{{member.nm}}</h4>
+        <span>member@email.com</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.info-container
+  background-color: #EAEAEA
+  padding: 1em
+
+  .left-col
+    width: 120px
+    float: left
+
+  .middle-col
+    width: calc(100% - 180px)
+    float: left
+    padding-top: 20px
+
+  .right-col
+    width: 40px
+    float: right  
+    padding-top: 20px
+
+
+  .info-icon-left
+    width: 118px
+    height: 118px
+    background: url(../images/sprite.png)
+    background-size: 690px
+    background-position: -387px -815px
+    border-radius: 100%
+
+
+  .info-icon-right
+    width: 38px
+    height: 38px
+    background: url(../images/sprite.png) -1389px -49px
+    cursor: pointer
+
+    & + .dropdown-menu
+      left: inherit
+      right: 0

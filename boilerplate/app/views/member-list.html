@@ -1,0 +1,4 @@
+<div class="row member-list-container">
+  <member ng-repeat="member in members | firstLetterFilter:alphabeth[selectedLetterIndex] | filter:filter.text | limitTo:quantity track by $index"></member>
+  <button type="button" class="btn btn-default load-more" ng-click="loadMoreMembers()">Load More</button>
+</div>
