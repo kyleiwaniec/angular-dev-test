@@ -19,8 +19,8 @@ You should see a single page app that lokks like this:
 
 1. You will need to create a checkbox that toggles all users selection
 2. You will need to fix the search filter so that when a user starts typing into the search field, members with names starting with the substring will be displayed.
+3. When you are finished, create a Pull Request into this repository.
 
-An instructions.png file is also provided with a visual representation of the above.
+
 ![Image of instructions](instructions.png)
 
-3. When you are finished, create a Pull Request into this repository.
