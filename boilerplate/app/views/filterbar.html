@@ -1,11 +1,24 @@
 <form class="form-inline">
   <div class="row">
-    <div class="col-md-3">
+
+    <!-- Checkbox -->
+    <div class="checkbox-wrap">
+      <div class="select-all-checkbox" ng-click="toggleAllMembers()" ng-class="{'checkbox-active': checkboxStyle}" title="Select All"
+        data-toggle="tooltip" data-placement="top" tooltip></div>
+    </div>
+
+    <!-- Input -->
+    <div class="col-xs-8 col-md-2">
       <input type="text" class="form-control filter-input" id="exampleInputEmail3" placeholder="Search..." ng-model="filter.text">
     </div>
-    <div class="col-md-8 letter-container">
-      <div ng-repeat="letter in alphabeth" class="filter-letter" ng-click="selectLetter($index)" ng-class="{'active': $index === selectedLetterIndex}" >{{letter}}</div>
+
+    <!-- Alphabeth -->
+    <div class="col-xs-12 col-md-8 letter-container">
+      <div ng-repeat="letter in alphabeth" class="filter-letter" ng-click="selectLetter($index)" ng-class="{'active': $index === selectedLetterIndex || (filter.text.charAt(0).toLowerCase()==letter.toLowerCase())}">
+        {{letter}}
+      </div>
     </div>
+
     <div class="col-md-1">
       <div title="Email selected members" class="email-icon pull-right" data-toggle="tooltip" data-placement="top" tooltip></div>
     </div>

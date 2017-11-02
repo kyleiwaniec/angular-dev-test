@@ -7,12 +7,27 @@
  * # NavbarCtrl
  * Controller of the angular14InterviewApp
  */
-angular.module('angular14InterviewApp')
-  .controller('NavbarCtrl', function ($scope) {
+
+angular.module("angular14InterviewApp").controller("NavbarCtrl", [
+  "$scope",
+  "serve",
+  function($scope, serve) {
+    $scope.$watch(
+      function() {
+        return serve.memberObj;
+      },
+      function(newData, oldData) {
+        $scope.selectedMembers = newData;
+        if (newData !== oldData) {
+          $scope.selectedMembers = newData;
+        }
+      }
+    );
+
     $scope.activeSearchBar = false;
 
     $scope.toggleSearchBar = function() {
-      return $scope.activeSearchBar = !$scope.activeSearchBar
+      return ($scope.activeSearchBar = !$scope.activeSearchBar);
     };
-
-  });
+  }
+]);
