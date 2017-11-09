@@ -1,10 +1,19 @@
 <form class="form-inline">
   <div class="row">
     <div class="col-md-3">
-      <input type="text" class="form-control filter-input" id="exampleInputEmail3" placeholder="Search..." ng-model="filter.text">
+      <div  class="col-md-3">
+        <div class="select-all"  ng-click="toggleSelectedAllMember()">
+          <div ng-class="{active:selectAll}">
+          </div>
+        </div>
+      </div>
+    
+      <div  class="col-md-9">
+      <input type="text" class="form-control filter-input" id="exampleInputEmail3" placeholder="Search..." ng-model="filtertext" ng-change="defaultCheckAllOnchange()">
+      </div>
     </div>
     <div class="col-md-8 letter-container">
-      <div ng-repeat="letter in alphabeth" class="filter-letter" ng-click="selectLetter($index)" ng-class="{'active': $index === selectedLetterIndex}" >{{letter}}</div>
+      <div ng-repeat="letter in alphabeth" class="filter-letter" ng-click="selectLetter($index)" ng-class="{'active': filtertext.charAt(0).toUpperCase()===letter}" >{{letter}}</div>
     </div>
     <div class="col-md-1">
       <div title="Email selected members" class="email-icon pull-right" data-toggle="tooltip" data-placement="top" tooltip></div>

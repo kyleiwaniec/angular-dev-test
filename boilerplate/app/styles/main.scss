@@ -32,8 +32,25 @@ html {
   .filter-input {
     width: 100%;
     border-radius: 0;
+    margin-right: -7px;
   }
 
+  .select-all {
+    height:35px;
+    width:35px;
+    border: 1px solid #ccc;
+    padding: 10px;
+
+    div {
+      width: 13px;
+      height: 13px;
+    }
+
+  }
+  .active {
+    background: url(../images/sprite.png) -453px -4px;
+    background-color: white;
+  }
 
   .letter-container {
     display: flex;
