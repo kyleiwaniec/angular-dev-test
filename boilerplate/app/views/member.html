@@ -4,10 +4,10 @@
 <div class="col-md-4 member-container">
   <div class="row">
     <div class="col-md-2">
-      <div class="member-avatar" ng-class="{'active-member': selectedMembers.includes($index)}" ng-click="toggleSelectedMember($index)">
+      <div class="member-avatar" ng-class="{'active-member':member.selected}" ng-click="toggleSelectedMember(member)">
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Andrea_Radrizzani_profile_GroupCEO_MPSilva.png" />
-        <div class="member-avatar-overlay" ng-class="{'active-member': selectedMembers.includes($index)}">
-          <div ng-class="{'active-member-checkbox': selectedMembers.includes($index)}"></div>
+        <div class="member-avatar-overlay" ng-class="{'active-member': member.selected}">
+          <div ng-class="{'active-member-checkbox': member.selected}"></div>
         </div>
       </div>
     </div>

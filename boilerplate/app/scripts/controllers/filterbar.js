@@ -10,11 +10,11 @@
 angular.module('angular14InterviewApp')
   .controller('FilterbarCtrl', ['$scope', 'filterbarService', '$http', function ($scope, filterbarService, $http) {
     $scope.alphabeth = filterbarService.alphabeth;
-    $scope.selectedLetterIndex = null;
+    $scope.filtertext = "";
     $scope.selectLetter = function(index) {
-      $scope.selectedLetterIndex = index;
+      $scope.filtertext = $scope.alphabeth[index];
     };
-
+    $scope.selectAll = false;
     $scope.quantity = 18;
     var onLoadQuantity = 3;
 
@@ -29,14 +29,16 @@ angular.module('angular14InterviewApp')
        $scope.members = data;
      })
 
-    $scope.selectedMembers = [];
-    $scope.toggleSelectedMember = function(index) {
-      var isSelected = $scope.selectedMembers.indexOf(index);
-      if(isSelected === -1) return $scope.selectedMembers.push(index);
+  
+     $scope.toggleSelectedAllMember = function() {
+      $scope.selectAll = !$scope.selectAll;
+      angular.forEach($scope.filteredItems, function(member){ member.selected = $scope.selectAll; });
+    };
 
-      $scope.selectedMembers.splice(isSelected, 1);
-      console.log($scope.selectedMembers);
-      debugger
+
+    $scope.toggleSelectedMember = function(member) {
+      member.selected=!member.selected;
+      checkAllstatus();
     };
 
 
