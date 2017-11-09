@@ -13,6 +13,7 @@ angular.module('angular14InterviewApp')
     $scope.filtertext = "";
     $scope.selectLetter = function(index) {
       $scope.filtertext = $scope.alphabeth[index];
+      $scope.defaultCheckAllOnchange();
     };
     $scope.selectAll = false;
     $scope.quantity = 18;
@@ -38,8 +39,12 @@ angular.module('angular14InterviewApp')
 
     $scope.toggleSelectedMember = function(member) {
       member.selected=!member.selected;
-      checkAllstatus();
+      
     };
-
+    $scope.defaultCheckAllOnchange = function(){
+      $scope.selectAll = false;
+    }
 
   }]);
+
+  
